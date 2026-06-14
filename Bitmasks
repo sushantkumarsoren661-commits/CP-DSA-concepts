@@ -1,0 +1,37 @@
+Bitmask = a number used to select, set, or check specific bits in another number.
+The core bitwise tools that make up bitmasks are:
+
+  Operation          Symbol           Purpose
+
+1)Left shift           <<             Create a mask for the k-th bit
+2)AND                  &              Check if a bit is set
+3)OR                   |              Set a bit
+4)XOR                  ^              Toggle a bit
+5)NOT                  ~              Flip all bits
+
+1) Left shift(<<):
+
+1LL << 0:  ...0000 0001  =  1   (2⁰)
+1LL << 1:  ...0000 0010  =  2   (2¹)
+1LL << 2:  ...0000 0100  =  4   (2²)
+1LL << 3:  ...0000 1000  =  8   (2³)
+
+Why 1LL instead of just 1?
+1 is a 32-bit int. If you write 1 << 31 or beyond, it overflows. 1LL makes it a 64-bit long long, so you can safely 
+shift up to 62 positions without overflow — crucial in competitive programming when working with bitmasks on large sets.
+
+The rule is: x << n = x × 2ⁿ
+
+2LL << 0  =  2 × 2⁰  =  2 × 1   =  2
+2LL << 1  =  2 × 2¹  =  2 × 2   =  4
+3LL << 2  =  3 × 2²  =  3 × 4   =  12
+4LL << 3  =  4 × 2³  =  4 × 8   =  32
+
+In binary:
+
+2LL << 0:  ...0000 0010  →  ...0000 0010  =  2
+2LL << 1:  ...0000 0010  →  ...0000 0100  =  4
+3LL << 2:  ...0000 0011  →  ...0000 1100  =  12
+4LL << 3:  ...0000 0100  →  ...0010 0000  =  32
+
+2) AND(&):
