@@ -1,0 +1,38 @@
+Comparater in sort
+
+A lambda in C++ is an anonymous function—a function without a name.
+General syntax of a lambda:
+[capture](parameters) -> return_type {
+    // function body
+};
+Instead of writing:
+
+bool cmp(int a, int b) {
+    return a > b;
+}
+you can write the function directly where it's needed:
+
+sort(v.begin(), v.end(), [](int a, int b) {
+    return a > b;
+});
+
+Capture list([]) = The part inside [] specifies which outside variables the lambda may access.
+[=]  =  capture all outside variables by value
+[&]  =  capture all outside variables by reference
+
+sort(v.begin(), v.end(), cmp);
+
+sort(order.begin(), order.end(),
+     [](auto &a, auto &b) {
+         if (a.first == b.first)
+             return a.second < b.second;
+         return a.first > b.first;
+     });
+
+If the vector contains elements of type: pair<int,int>, [](auto &a, auto &b) automatically deduces 
+auto &a  → pair<int,int>& 
+auto &b  → pair<int,int>&
+
+General rule:
+To sort in ascending order, use <
+To sort in descending order, use >
