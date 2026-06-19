@@ -1,0 +1,62 @@
+// Codeforces problem 2237B
+
+vector <ll> a(n), b(n);
+        for(auto &x : a)
+        cin >> x;
+
+        for(auto &x : b)
+        cin >> x;
+
+        ll ans = 0;
+
+        for(i = 0; i < n; i++)
+        {
+            j = i;
+            for(; j < n && a[j] > b[i]; j++);  // Can use this to just get the required index
+            
+            if(j == n)
+            {
+                ans = -1;
+                break;
+            }
+            for(; j > i; j--)
+            {
+                swap(a[j], a[j - 1]);
+                ans++;
+            }
+        }
+        cout << ans << endl;
+
+// Method 2
+
+vector <ll> a(n), b(n);
+        for(auto &x : a)
+        cin >> x;
+
+        for(auto &x : b)
+        cin >> x;
+
+        ll ans = 0, ct = 0;
+
+        for(i = 0; i < n; i++)
+        {
+            for(j = i; j < n; j++)
+            {
+                if(a[j] <= b[i])
+                break;
+            }
+
+            if(j == n)
+            {
+                ans = -1;
+                break;
+            }
+
+            while(j > i)
+            {
+                swap(a[j], a[j - 1]);
+                ans++;
+                j--;
+            }
+        }
+        cout << ans << endl;
