@@ -1,3 +1,6 @@
+Dutch National Flag algorithm sort 3 unique values with Linear Time O(n) and constant space O(1) using only comparisons 
+between three pointers with one pass through the whole array.
+
 The Dutch National Flag algorithm, also known as 3-way partitioning, is an algorithm for sorting an array containing three 
 distinct values. The algorithm was designed to solve the problem of sorting an array containing only 0s, 1s, and 2s, which 
 is similar to the problem in the given question.
