@@ -1,0 +1,23 @@
+// Sliding Window templates
+
+1) Dynamic Sliding window of size k
+
+ll l = 0, r = 0, ct_W = 0, ans = LLONG_MAX;
+
+        while(r < n)
+        {
+            if(s[r] == 'W')                          // One if case for checking the elements needs to be changed in the k 
+            ct_W++;                                     size window
+
+            if(r - l + 1 == k)-                     // Second if case to get the result if the window size k has been reached 
+            {                                          and reseting the previous pointer 
+                ans = min(ans, ct_W);
+                
+                if(s[l] == 'W')
+                ct_W--;
+
+                l++;
+            }
+            r++;
+        }
+        cout << ans << endl;
