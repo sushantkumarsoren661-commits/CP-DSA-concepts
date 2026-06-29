@@ -1,0 +1,7 @@
+// To find if a string is a sub string of the other string 
+
+if(x.find(a) != string::npos)        // If a is a sub string of x then it will return the index of the position of that 
+cout << Yes << endl;                 substring else it will return string::npos
+
+else
+cout << NO << endl;
