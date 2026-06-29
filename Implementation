@@ -1,0 +1,33 @@
+1) CodeForces : 1362A - Johnny and Ancient Computer
+
+Given two numbers a and b you want perform minimum no. of opeartions to obtain b.
+Operations are :
+
+1) a * 2
+2) a * 4
+3) a * 8
+4) a / 2
+5) a / 4
+6) a / 8
+
+Notice these numbers are some 2 to the power in this range {-3, -2, -1, 1, 2, 3}
+So we will do a = ra * 2^x and b = rb * 2^y. ra and rb both are odd as we are extracting all the powers of 2.
+If ra == rb then a can be transformed to b otherwise no.
+Now if ra == rb, to calculate minimum no of operations we do ceil(abs(x - y) / 3.0)
+We divide it by 3 because one operation can change the exponent by at most 3.
+We use ceil because the answer must be a whole number of operations, and if there's any remainder after dividing by 3, we 
+need one extra operation.
+
+One operation can remove at most 3 powers of 2
+Suppose the difference in exponents is 5 = abs(x - y)
+
+Since one operation can reduce the exponent by at most 3, we have:
+
+First operation: remove 3
+Remaining difference: 2
+Second operation: remove 2
+
+So we need 2 operations.
+Now compute: 5 / 3 = 1.66..
+Ceiling it will get 0.66 to 1 making it 1 + 1 = 2 meaning 1 is of 2^3 and 2^2. It greedly uses the maximimum power of 2.
+
