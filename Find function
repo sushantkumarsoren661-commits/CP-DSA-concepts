@@ -1,0 +1,21 @@
+// Find function for vector, map, set,
+
+x.end() returns an iterator pointing one position past the last character.
+
+unordered_set<int> st;
+
+if (x.find(a) != x.end())                   // This works because: x.find(a) returns an iterator and x.end() also 
+                                              returns an iterator. So both sides have the same type.
+                                                  
+                                              
+                                                  
+                                                  
+Summary :
+
+✅ For string:
+
+if (word.find(x) != string::npos)
+
+✅ For set, map, unordered_set:
+
+if (st.find(x) != st.end())
