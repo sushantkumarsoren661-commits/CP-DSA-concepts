@@ -35,3 +35,9 @@ In binary:
 4LL << 3:  ...0000 0100  →  ...0010 0000  =  32
 
 2) AND(&):
+
+4) XOR(^):
+
+i)   x ^ x = 0
+ii)  x ^ 0 = x
+iii) a ^ b ^ c = b ^ c ^ a = c ^ a ^ b = a ^ C ^ b
