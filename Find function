@@ -7,7 +7,13 @@ unordered_set<int> st;
 if (x.find(a) != x.end())                   // This works because: x.find(a) returns an iterator and x.end() also 
                                               returns an iterator. So both sides have the same type.
                                                   
-                                              
+// To find if a string is a sub string of the other string 
+
+if(x.find(a) != string::npos)        // If a is a sub string of x then it will return the index of the position of that 
+cout << Yes << endl;                 substring else it will return string::npos
+
+else
+cout << NO << endl;      
                                                   
                                                   
 Summary :
@@ -18,4 +24,4 @@ if (word.find(x) != string::npos)
 
 ✅ For set, map, unordered_set:
 
-if (st.find(x) != st.end())
+if (x.find(a) != x.end())
