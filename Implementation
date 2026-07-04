@@ -31,3 +31,14 @@ So we need 2 operations.
 Now compute: 5 / 3 = 1.66..
 Ceiling it will get 0.66 to 1 making it 1 + 1 = 2 meaning 1 is of 2^3 and 2^2. It greedly uses the maximimum power of 2.
 
+2) // Cleaner version of implementation according to which number is smaller or bigger
+Instead of using 
+      if(a > b) {
+      ----- }
+      
+      else {
+      ----- }
+
+use this :
+    if(a.size() < b.size())                // This will make a always the bigger one
+    swap(a, b);                         
