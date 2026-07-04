@@ -1,0 +1,8 @@
+// Integer Ceiling Division Formula
+
+ceil(a / b) = (a + b - 1) / b                         
+
+// Reason why just ceil(a / b) does not work is it first does integer divison a / b then ceil it. 
+Eg : ceil(9 / 5) is not 2 but 1 because it first does 9 / 5 which is 1 then ceil(1) = 1.
+                                                      
+                                                      
