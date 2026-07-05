@@ -1,0 +1,35 @@
+Cf : B. Valerii Against Everyone
+Link : https://codeforces.com/problemset/problem/1438/B
+
+Every power of two has exactly one set bit.
+ Eg:   1  = 0001
+       2  = 0010
+       4  = 0100
+       8  = 1000
+
+Now suppose we have 2 + 2 = 4, in binary
+        0010
+        0010
+        ----
+        0100     , a carry occurs. So equal powers combine into the next larger power.
+
+So when can two subarray sums be equal?
+2 = 1 + 1
+
+16 = 8 + 8 
+   = 8 + 4 + 4 
+   = 8 + 4 + 2 + 2 
+   = 8 + 4 + 2 + 1 + 1          
+
+This happened because there are two equal powers. If every exponent is different, Eg : 8 + 2 + 1, its binary 
+representation is 1011. There is no carry. So every subset has a unique binary representation.
+Therefore two different subarrays cannot have the same sum.
+
+Another example :
+
+we need to make 14 = 14, in binary 1011 = 1011.
+So in subarray 1 = 1011, so we have _0__ for subarray 2 so we need to make 1011
+In order to turn _ into 1 we need same powers of 2
+
+
+
