@@ -1,0 +1,5 @@
+1) Unordered set
+
+unordered_set <ll> s;               // Storing elements in unordered set
+for(auto x : b)
+s.insert(x);
