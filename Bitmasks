@@ -41,3 +41,13 @@ In binary:
 i)   x ^ x = 0
 ii)  x ^ 0 = x
 iii) a ^ b ^ c = b ^ c ^ a = c ^ a ^ b = a ^ C ^ b
+
+Trick:
+XOR of 0/1 to n in O(1) Time Complexity :
+Let XOR of 0/1 to n be = x, then
+
+n % 4 == 0 => x = n
+n % 4 == 1 => x = 1
+n % 4 == 2 => x = n + 1
+n % 4 == 3 => x = 0
+
