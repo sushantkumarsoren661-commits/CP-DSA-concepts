@@ -1,0 +1,74 @@
+// The Sieve of Eratosthenes is one of the fastest algorithms for finding all prime numbers up to a given limit.
+// Instead of checking each number individually (which is slow), it marks all multiples of prime numbers as not prime.
+// Usefull when constarins are very large (>= 10^6) else use normal N^(1/2) user defined prime function.
+
+Example: Find all primes from 2 to 20
+
+Initially, assume every number is prime.
+2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+P P P P P P P P  P  P  P  P  P  P  P  P  P  P  P
+
+Step 1: Start with 2
+2 is prime.
+
+Mark every multiple of 2 (except 2 itself).
+2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+P P X P X P X P  X  P  X  P  X  X  X  P  X  P  X
+
+Step 2: Move to 3
+
+3 is still marked prime.
+Mark every multiple of 3.
+Some are already crossed due to intersection of multiples of 2 and 3.
+2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+P P X P X P X X  X  P  X  P  X  X  X  P  X  P  X
+
+Step 3: Move to 4
+
+4 and its multiples are already crossed.
+So skip it.
+
+Step 4: Move to 5
+
+5 is prime.
+
+Mark its multiples:
+10, 15, 20
+Already crossed.
+
+Now stop because
+5 ^ 2 = 25 > 20
+
+The remaining numbers marked prime are
+2 3 5 7 11 13 17 19
+These are all the primes ≤ 20.
+
+IMPLEMENATION :-
+
+vector<bool> prime(21, true);
+Initially,
+Index : 0 1 2 3 4 5 6 7 8 9 ...                 // where true(T) = prime                                                         false = not prime
+Value : F F T T T T T T T T ...                          false(F) = Not primex
+
+The Algorithm :
+for (int i = 2; i * i <= N; i++)
+{
+    if (prime[i])
+    {
+        for (int j = i * i; j <= N; j += i)
+            prime[j] = false;
+    }
+}
+
+Time Complexity : O(Nlog(N)log(N))
+
+User defined Prime function :
+
+bool isPrime(int n) {
+    if (n <= 1) 
+    return false;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) 
+        return false;
+    }
+    return true;
