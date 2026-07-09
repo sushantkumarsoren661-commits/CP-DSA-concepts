@@ -48,4 +48,14 @@ use this :
 
    To make x ^ b = b we can do x ^ x ^ b = b   , where x ^ b != a    
    To make x ^ b = b we can do x ^ x ^ b ^ (a + 1) ^ (a + 1) = b    , where x ^ b == a
-   
+
+4) Codeforces : B. Roof Construction
+   Link : https://codeforces.com/problemset/problem/1632/B
+
+   Formula to calculate most significant bit(msb) = floor(log2(n))
+                                                k = 1ll << msb
+
+      Eg : n = 8
+           n - 1 = 7
+           msb = floor(log2(7)) = 2
+           k = 1ll << msb = 2 ^ 2 = 4
